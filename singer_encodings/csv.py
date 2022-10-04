@@ -25,6 +25,7 @@ def get_row_iterator(iterable, options=None, headers_in_catalog = None, with_dup
     headers = set()
     file_stream = codecs.iterdecode(iterable, encoding='utf-8-sig')
     delimiter = options.get('delimiter', ',')
+    remove_character = options.get('remove_character', '')
 
     # Return the CSV key-values along with considering the duplicate headers, if any, in the CSV file
     if with_duplicate_headers:
@@ -34,8 +35,12 @@ def get_row_iterator(iterable, options=None, headers_in_catalog = None, with_dup
         reader = csv_helper.get_row_iterator(file_stream, delimiter, headers_in_catalog)
         headers = set(csv_helper.unique_headers)
     else :
-        # Replace any NULL bytes in the line given to the DictReader
-        reader = csv.DictReader((line.replace('\0', '') for line in file_stream), fieldnames=None, restkey=SDC_EXTRA_COLUMN, delimiter=delimiter)
+        if remove_character:
+            # Replace any NULL bytes and 'remove_character' in the line given to the DictReader
+            reader = csv.DictReader((line.replace('\0', '').replace(remove_character, '') for line in file_stream), fieldnames=None, restkey=SDC_EXTRA_COLUMN, delimiter=delimiter)
+        else:
+            # Replace any NULL bytes in the line given to the DictReader
+            reader = csv.DictReader((line.replace('\0', '') for line in file_stream), fieldnames=None, restkey=SDC_EXTRA_COLUMN, delimiter=delimiter)
         try:
             headers = set(reader.fieldnames)
         except TypeError:
