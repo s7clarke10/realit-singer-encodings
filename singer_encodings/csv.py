@@ -23,7 +23,7 @@ def get_row_iterator(iterable, options=None, headers_in_catalog = None, with_dup
     options = options or {}
     reader = []
     headers = set()
-    file_stream = codecs.iterdecode(iterable, encoding='utf-8-sig')
+    file_stream = codecs.iterdecode(iterable, encoding=options.get('encoding', 'utf-8-sig'))
     delimiter = options.get('delimiter', ',')
     remove_character = options.get('remove_character', '')
 
