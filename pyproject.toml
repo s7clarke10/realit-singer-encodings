@@ -21,6 +21,9 @@ classifiers = [
 packages = [
     { include = "singer_encodings" }
 ]
+include = [
+    { path = "CHANGELOG.md", format = ["sdist", "wheel"] }
+]
 
 [tool.poetry.dependencies]
 python = ">=3.8,<3.13"
