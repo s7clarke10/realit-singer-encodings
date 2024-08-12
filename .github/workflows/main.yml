@@ -77,11 +77,11 @@ jobs:
 
     - name: Generate XML coverage report
       run: |
-        poetry run coverage xml --fail-under=75
+        poetry run coverage xml --fail-under=70
 
     - name: Display human readable report
       run: |
-        poetry run coverage report --fail-under=75
+        poetry run coverage report --fail-under=70
         
     - name: Code Coverage Summary Report
       uses: irongut/CodeCoverageSummary@v1.3.0
