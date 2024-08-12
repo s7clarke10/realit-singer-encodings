@@ -1,0 +1,79 @@
+[tool.poetry]
+name = "realit-singer-encodings"
+version = "2.1.0"
+description = "Singer.io encodings library - PipelineWise and Meltano compatible"
+authors = []
+license = "Apache 2.0"
+readme = "README.md"
+homepage = "https://github.com/s7clarke10/realit-singer-encodings"
+repository = "https://github.com/s7clarke10/realit-singer-encodings"
+keywords = ["singer", "meltano", "pipelinewise", "framework"]
+classifiers = [
+    "License :: OSI Approved :: Apache Software License",
+    # Specify the Python versions you support here.
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Development Status :: 5 - Production/Stable", "Topic :: Database"
+]
+packages = [
+    { include = "singer_encodings" }
+]
+include = [
+    { path = "CHANGELOG.md", format = ["sdist", "wheel"] }
+]
+
+[tool.poetry.dependencies]
+python = ">=3.8,<3.13"
+realit_singer_python = "^5.0.0"
+
+[tool.poetry.dev-dependencies]
+pylint = "3.2.5"
+pytest = "8.*"
+coverage = ">= 6.3, < 8.0"
+ipython = "^8.12.1"
+tox = "^4.17.1"
+flake8 = { version = "^7.1.0", python = ">=3.8.1" }
+black = "^24.4.2"
+pydocstyle = "^6.3.0"
+mypy = "^1.10.1"
+isort = "^5.13.2"
+
+[tool.black]
+line-length = 120
+
+[tool.coverage.paths]
+source = ["singer_encodings"]
+
+[tool.coverage.run]
+branch = true
+source = ["singer_encodings"]
+
+[tool.coverage.report]
+fail_under = 76.0
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+src_paths = "singer_encodings"
+use_parentheses = true
+known_first_party = "singer_encodings"
+include_trailing_comma = true
+add_imports = [
+    "from __future__ import annotations",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+addopts = "-v --doctest-modules"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry.scripts]
+realit-singer-encodings = "realit_singer_encodings.__init__:main"
