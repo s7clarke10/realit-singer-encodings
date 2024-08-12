@@ -1,7 +1,7 @@
-realit-singer-encoding
+realit-singer-encodings
 ===================
-[![PyPI version](https://badge.fury.io/py/realit-singer-encoding.svg)](https://badge.fury.io/py/realit-singer-python)
-[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/realit-singer-python.svg)](https://pypi.org/project/realit-singer-python/)
+[![PyPI version](https://badge.fury.io/py/realit-singer-encodings.svg)](https://badge.fury.io/py/realit-singer-encodings)
+[![PyPI - Python Version](https://img.shields.io/pypi/pyversions/realit-singer-encodings.svg)](https://pypi.org/project/realit-singer-encodings/)
 [![License: MIT](https://img.shields.io/badge/License-Apache2-yellow.svg)](https://opensource.org/licenses/Apache-2.0)
 
 Writes the Singer format from Python.
@@ -25,7 +25,7 @@ Next, install this library:
 source ~/.virtualenvs/realit-singer-encodings/bin/activate
 git clone http://github.com/s7clarke10/realit-singer-encodings
 cd realit-singer-encodings
-pip install
+pip install .
 ```
 
 ### Usage example
