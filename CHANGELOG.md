@@ -2,7 +2,12 @@
 -------------------
 **Changes**
   - Making a variant realit-singer-encodings
-  - Adding pipeline to push to PyPI
+  - Moving from setup.py to project.toml and Poetry instead of setup tools
+  - Adding ci/cd pipelines for running pytest
+  - Adding publishing pipeline to pypi
+  - Adding tox to run ci tests before raising a PR
+  - Linting code
+  - Adding README.md
 
 2.0.13 (2023-10-07)
 -------------------
