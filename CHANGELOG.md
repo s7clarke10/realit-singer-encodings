@@ -1,3 +1,7 @@
+2.1.1 (2024-08-19)
+**Changes**
+  - Moving to a trusted push to pypi
+
 2.1.0  (2024-08-12)
 -------------------
 **Changes**
