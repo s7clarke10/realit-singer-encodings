@@ -8,7 +8,7 @@ jobs:
   deploy:
     environment:
       name: Production
-      url: https://pypi.org/p/realit-singer-python
+      url: https://pypi.org/p/realit-singer-encoding
     permissions:
       contents: read
       id-token: write  # IMPORTANT: this permission is mandatory for trusted publishing
