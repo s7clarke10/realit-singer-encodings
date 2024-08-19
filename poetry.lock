@@ -989,13 +989,13 @@ files = [
 
 [[package]]
 name = "realit-singer-python"
-version = "5.0.1"
+version = "5.0.3"
 description = "Singer.io utility library - PipelineWise and Meltano compatible"
 optional = false
 python-versions = "<3.13,>=3.8"
 files = [
-    {file = "realit_singer_python-5.0.1-py3-none-any.whl", hash = "sha256:df43042a69f492de5c3dd49124df6cb61d0e0a76ab06edc6250a46ca45e7adbf"},
-    {file = "realit_singer_python-5.0.1.tar.gz", hash = "sha256:190bc9174d1bedb025e1b161a6aeb7aba5fd3ce6103aee42a8f54255dc6a8cca"},
+    {file = "realit_singer_python-5.0.3-py3-none-any.whl", hash = "sha256:1d6d3a236b67c750d3df1294cad2e817c848f5d7df8cf57936b8297bae62fb00"},
+    {file = "realit_singer_python-5.0.3.tar.gz", hash = "sha256:d6bb036a9d9beb6d417bf1d3c607409fd577ae0f76ee853ed950b5574011d181"},
 ]
 
 [package.dependencies]
